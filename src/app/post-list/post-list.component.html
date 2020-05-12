@@ -1,0 +1,33 @@
+<li [ngClass]="{'list-group-item': true, 
+'list-group-item-success': loveIts > 0, 
+'list-group-item-danger': loveIts < 0}"
+ style="border:5px solid transparent;">
+    <div class="container" id="container">
+        <div class="row">
+            <div class="col-12 col-sm-10 col-md-10 col-lg-10 offset-sm-1 offset-md-1 offset-lg-1">
+                <div id="blog">
+                    <div class="row">
+                        <div class="col-6 col-sm-6 col-md-6 col-lg-6">
+                            <p>
+                                <strong>
+                                    {{ title }} 
+                                </strong>        
+                            </p>
+                        </div>
+                        <div class="col-6 col-sm-6 col-md-6 col-lg-6">
+                            <p> {{created_at | date: 'short'}} et {{ loveIts }} Like(s)</p>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <p> {{content}} </p>
+                        <input type="text" class="form-control" [(ngModel)]="content"><br>
+                    </div>
+                    <div class="col">
+                        <button class="btn btn-primary" type="button" style="margin-right:30px;" (click)="onClick()">J'aime</button>
+                        <button class="btn btn-danger" type="button" (click)="noClick()">Je n'aime pas</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</li>
